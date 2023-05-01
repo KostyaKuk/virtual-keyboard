@@ -43,7 +43,6 @@ export default class Keyboard {
     const {
       dataset: { code },
     } = areaKeyboard;
-    console.log(code);
     // this.textarea.value += `${code}`;
     this.eventKeydown({ code, type: event.type });
     areaKeyboard.addEventListener('mouseleave', this.cancelStyle);
@@ -66,19 +65,22 @@ export default class Keyboard {
     }
   }
 
+  determineKey(keyBase) {
+    this.printKey(keyBase, keyBase.key);
+  }
+
   eventKeydown = (event) => {
     const { code, type } = event;
     const keyBase = this.tempKey.find((key) => key.code === code);
     this.textarea.focus();
-    console.log(keyBase);
     if (type.includes('down')) {
       keyBase.wrapper.classList.add('active');
     }
-    this.printKey(Key.key);
+    this.determineKey(keyBase);
   };
 
   printKey = (keyBase, key) => {
-    console.log(key);
+    console.log(keyBase);
     const cursorPosition = this.textarea.selectionStart;
     const leftCursor = this.textarea.value.slice(0, cursorPosition);
     const rightCursor = this.textarea.value.slice(cursorPosition);
