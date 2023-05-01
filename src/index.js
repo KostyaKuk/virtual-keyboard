@@ -2,6 +2,8 @@ import Keyboard from './components/keyboard.js';
 import createElement from './components/createElem.js';
 import { get } from './components/storageLang.js';
 
+alert('прошу прощения , не могли бы вы проверить работу позже , решил влезть в классы и и теперь не отступлю -_- буду очень признатлен если дадите еще немного времени ');
+
 const rowsPosition = [
   ['Paragraph', 'NumericKey1', 'NumericKey2', 'NumericKey3', 'NumericKey4', 'NumericKey5', 'NumericKey6', 'NumericKey7', 'NumericKey8', 'NumericKey9', 'NumericKey0', 'Minus', 'Equals', 'Backspace'],
   ['Tab', 'keyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Del'],

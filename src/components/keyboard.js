@@ -43,7 +43,8 @@ export default class Keyboard {
     const {
       dataset: { code },
     } = areaKeyboard;
-    this.textarea.value += `${code}`;
+    console.log(code);
+    // this.textarea.value += `${code}`;
     this.eventKeydown({ code, type: event.type });
     areaKeyboard.addEventListener('mouseleave', this.cancelStyle);
   };
@@ -59,10 +60,10 @@ export default class Keyboard {
     event.target.removeEventListener('mouseleave', this.cancelStyle);
   };
 
-  pressedKey(code, isPressed){
-   if (code.includes('Shift')){
-    this.isShift = isPressed; 
-   }
+  pressedKey(code, isPressed) {
+    if (code.includes('Shift')) {
+      this.isShift = isPressed;
+    }
   }
 
   eventKeydown = (event) => {
@@ -73,11 +74,15 @@ export default class Keyboard {
     if (type.includes('down')) {
       keyBase.wrapper.classList.add('active');
     }
+    this.printKey(Key.key);
   };
 
-  // printKey = (keyBase, key) => {
-  //   let cursorPosition = this.textarea.selectionStart;
-  //   const leftCursor = this.textarea.value.slice(0, cursorPosition);
-  //   const rightCursor = this.textarea.value.slice(cursorPosition);
-  // }
+  printKey = (keyBase, key) => {
+    console.log(key);
+    const cursorPosition = this.textarea.selectionStart;
+    const leftCursor = this.textarea.value.slice(0, cursorPosition);
+    const rightCursor = this.textarea.value.slice(cursorPosition);
+
+    this.textarea.value = `${leftCursor}${key}${rightCursor}`;
+  };
 }
