@@ -1,6 +1,6 @@
 export default function createElement(el, className, ...attributes) {
   const component = document.createElement(el);
-  component.className.add(className);
+  if (className) component.classList.add(className);
 
   if (attributes.length) {
     attributes.forEach(([name, value]) => {

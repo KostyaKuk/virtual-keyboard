@@ -1,14 +1,14 @@
 import createElement from './createElem.js';
 
 export default class Textarea {
-  constructor(colums, rows) {
+  constructor(colums, row) {
     this.colums = colums;
-    this.rows = rows;
+    this.row = row;
     this.wrapper = createElement(
       'textarea',
       'area_style',
       ['placeholder', 'Hello!'],
-      ['rows', rows],
+      ['rows', row],
       ['cols', colums],
     );
   }
