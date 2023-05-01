@@ -8,7 +8,7 @@ export default class Keyboard {
   constructor(rows) {
     this.rows = rows;
     this.wrapper = createElement('div', 'keyboard');
-    this.textarea = new Textarea(5, 50).wrapper;
+    this.textarea = new Textarea(5, 20).wrapper;
   }
 
   initLang(lang) {
@@ -23,15 +23,61 @@ export default class Keyboard {
       const rowComponent = createElement('div', 'row_component');
       rowComponent.dataset.row = i + 1;
       row.forEach((code) => {
-        const keyLayout = this.keyInit.find((key) => key.code === code);
-        if (keyLayout) {
-          const keyBtn = new Key(keyLayout);
+        const keyBase = this.keyInit.find((key) => key.code === code);
+        if (keyBase) {
+          const keyBtn = new Key(keyBase);
           this.tempKey.push(keyBtn);
           rowComponent.append(keyBtn.wrapper);
         }
       });
       this.wrapper.append(rowComponent);
     });
+    this.wrapper.addEventListener('mousedown', this.mouseEventKeydown);
+    document.addEventListener('keydown', this.keyEventKeydown);
+    document.addEventListener('keyup', this.keyEventKeydown);
     return this;
   }
+
+  mouseEventKeydown = (event) => {
+    const areaKeyboard = event.target.closest('.key');
+    const {
+      dataset: { code },
+    } = areaKeyboard;
+    this.textarea.value += `${code}`;
+    this.eventKeydown({ code, type: event.type });
+    areaKeyboard.addEventListener('mouseleave', this.cancelStyle);
+  };
+
+  keyEventKeydown = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    this.eventKeydown(event);
+  };
+
+  cancelStyle = (event) => {
+    event.target.classList.remove('active');
+    event.target.removeEventListener('mouseleave', this.cancelStyle);
+  };
+
+  pressedKey(code, isPressed){
+   if (code.includes('Shift')){
+    this.isShift = isPressed; 
+   }
+  }
+
+  eventKeydown = (event) => {
+    const { code, type } = event;
+    const keyBase = this.tempKey.find((key) => key.code === code);
+    this.textarea.focus();
+    console.log(keyBase);
+    if (type.includes('down')) {
+      keyBase.wrapper.classList.add('active');
+    }
+  };
+
+  // printKey = (keyBase, key) => {
+  //   let cursorPosition = this.textarea.selectionStart;
+  //   const leftCursor = this.textarea.value.slice(0, cursorPosition);
+  //   const rightCursor = this.textarea.value.slice(cursorPosition);
+  // }
 }

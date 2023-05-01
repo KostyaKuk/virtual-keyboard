@@ -1,0 +1,50 @@
+.keyboard_wrapper{
+padding: 30px 30px ;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.area_style{
+    width: 100%;
+}
+
+.keyboard{
+padding-top: 15px;
+display: flex;
+flex-direction: column;
+max-width: 100%;
+gap: 10px;
+}
+
+.row_component{
+    display: flex;
+    gap: 10px;
+}
+
+.key{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid ;
+    border-radius: 10px;
+   
+}
+
+.key.active{
+    background-color: yellow;
+}
+
+.Space{
+    width: 200px;
+}
+
+.ShiftRight{
+    width: 100px;
+}
