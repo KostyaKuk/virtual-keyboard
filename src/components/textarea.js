@@ -7,7 +7,7 @@ export default class Textarea {
     this.wrapper = createElement(
       'textarea',
       'area_style',
-      ['placeholder', 'Hello!'],
+      ['placeholder', 'Hello! Cмену языка сделать не успел ;('],
       ['rows', row],
       ['cols', colums],
     );
