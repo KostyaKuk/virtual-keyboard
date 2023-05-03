@@ -52,7 +52,6 @@ export default class Keyboard {
 
   keyEventKeydown = (event) => {
     event.preventDefault();
-
     this.eventKeydown(event);
   };
 

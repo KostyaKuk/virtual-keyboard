@@ -37,9 +37,13 @@ gap: 10px;
     border-radius: 10px;
    
 }
+.key:hover{
+    transition: .2s;
+}
 
 .key.active{
     background-color: yellow;
+    border-radius: 30px;
 }
 
 .Space{
