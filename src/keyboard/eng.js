@@ -2,57 +2,57 @@ export default [
   {
     key: '§',
     shiftKey: '±',
-    code: 'Paragraph',
+    code: 'Backquote',
   },
   {
     key: '1',
     shiftKey: '!',
-    code: 'NumericKey1',
+    code: 'Digit1',
   },
   {
     key: '2',
     shiftKey: '@',
-    code: 'NumericKey2',
+    code: 'Digit2',
   },
   {
     key: '3',
     shiftKey: '#',
-    code: 'NumericKey3',
+    code: 'Digit3',
   },
   {
     key: '4',
     shiftKey: '$',
-    code: 'NumericKey4',
+    code: 'Digit4',
   },
   {
     key: '5',
     shiftKey: '%',
-    code: 'NumericKey5',
+    code: 'Digit5',
   },
   {
     key: '6',
     shiftKey: '^',
-    code: 'NumericKey6',
+    code: 'Digit6',
   },
   {
     key: '7',
     shiftKey: '&',
-    code: 'NumericKey7',
+    code: 'Digit7',
   },
   {
     key: '8',
     shiftKey: '*',
-    code: 'NumericKey8',
+    code: 'Digit8',
   },
   {
     key: '9',
     shiftKey: '(',
-    code: 'NumericKey9',
+    code: 'Digit9',
   },
   {
     key: '0',
     shiftKey: ')',
-    code: 'NumericKey0',
+    code: 'Digit0',
   },
   {
     key: '-',
@@ -62,7 +62,7 @@ export default [
   {
     key: '=',
     shiftKey: '+',
-    code: 'Equals',
+    code: 'Equal',
   },
   {
     key: 'Backspace',
