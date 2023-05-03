@@ -3,7 +3,7 @@ import createElement from './components/createElem.js';
 import { get } from './components/storageLang.js';
 
 const rowsPosition = [
-  ['Paragraph', 'NumericKey1', 'NumericKey2', 'NumericKey3', 'NumericKey4', 'NumericKey5', 'NumericKey6', 'NumericKey7', 'NumericKey8', 'NumericKey9', 'NumericKey0', 'Minus', 'Equals', 'Backspace'],
+  ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace'],
   ['Tab', 'keyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Del'],
   ['CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'BackSlash', 'Enter'],
   ['ShiftLeft', 'Backticks', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Less', 'More', 'Slash', 'ArrowUp', 'ShiftRight'],
