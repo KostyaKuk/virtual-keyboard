@@ -14,6 +14,7 @@ export default class Key {
 
     // console.log(this.isFunctionKey)
     if (this.isFunctionKey) this.wrapper.classList.add('func', `${this.code}`);
+    if (shiftKey && key.toUpperCase() !== shiftKey) this.subSymbol.innerHTML = this.shiftKey;
 
     this.wrapper.dataset.code = this.code;
     this.wrapper.append(this.subSymbol, this.symbol);
